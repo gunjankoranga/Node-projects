@@ -1,0 +1,46 @@
+  
+<html>
+    <body>
+        <%-include('Nav')-%>
+        <center><h3>CRUD Details</h3></center><hr>
+       
+     <!--- 
+   <%=dt[0].ID%>
+   <%=dt[0].Name%>
+   <%=dt[0].Course%>
+   !--> 
+<div class="row">
+<div class="col-md-3"></div>
+
+    <div class="col-md-6">
+        <a href="/AddData" class="btn btn-warning">ADD DATA</a><br> <br>
+      
+      
+        <table class="table table-bordered table-striped table-hover table-dark">
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Course</td>
+                    <td>Action</td>
+                    </tr>
+<% dt.forEach(item=>{
+ %>
+                        <tr>
+                        <td><%=item.ID%></td>
+                        <td><%=item.Name%></td>
+                        <td><%=item.Course%> </td>
+                        <td><%=item.Action%> 
+                            <a class="btn btn-warning" href="/update?Uid=<%=item.ID%>">Update</a>&emsp; &emsp; 
+                            <a class="btn btn-warning"  href="/DelData?delid=<%=item.ID%>">Delete</a> &emsp;
+                           
+                </td>
+                        </tr>
+                        <%
+                     })%>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </body>
+</html>
