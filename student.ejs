@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <%-include('Nav')-%>
+<center><h3>Student details node</h3></center><hr>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <form>
+            Enter  Name
+            <input type="text" name="n" class="form-control"><br>
+            Enter Roll Number
+            <input type="text" name="r" class="form-control"><br>
+            Enter Physics Number
+            <input type="text" name="p" class="form-control"><br>
+            Enter Chemistry Number
+            <input type="text" name="c" class="form-control"><br>
+            Enter Maths Number
+            <input type="text" name="m" class="form-control"><br>
+            <input type="submit" name="submit" value="Result" class="btn btn-success">
+        </form>
+    </div>
+    <% if(st){
+        %>
+    <div class="col-md-4">
+<table class="table table-bordered table-striped table-hover table-success">
+    <tbody>
+        <tr><td>Name</td><td>Roll</td><td>Physics</td><td>Chemistry</td><td>Maths</td><td>Total</td><td>Percentage</td></tr>    
+<tr><td><%=name%></td><td><%=roll%></td><td><%=phy%></td><td><%=che%></td><td><%=math%></td><td><%=total%></td><td><%=per%></td></tr>
+</tbody>
+</table>        
+    </div>
+    <%
+}%>
+%>
+</div>
+    </body>
+</html>
